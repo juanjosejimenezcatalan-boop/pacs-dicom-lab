@@ -64,7 +64,7 @@ curl -u orthanc:orthanc http://localhost:8042/dicom-web/studies
 
 ## Screenshots
 
-![Orthanc with a loaded CT study](screenshots/ohif-ct-chest.png)
+![Orthanc with a loaded CT study](screenshots/orthanc-ct-chest.png)
 
 ![CT study displayed in OHIF Viewer](screenshots/ohif-ct-chest.png)
 
