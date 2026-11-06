@@ -1,0 +1,12 @@
+# Medical images and local PACS data
+*.dcm
+*.DCM
+*.tcia
+orthanc-db/
+data/
+
+# Third-party source code
+ohif-viewers/
+
+# macOS
+.DS_Store
