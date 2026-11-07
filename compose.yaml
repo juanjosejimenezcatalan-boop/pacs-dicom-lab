@@ -1,0 +1,21 @@
+services:
+  orthanc:
+    image: orthancteam/orthanc:26.8.2
+    container_name: pacs-lab-orthanc
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8043:8042" # Orthanc REST/UI and DICOMweb, host-local only
+      - "127.0.0.1:4243:4242" # DICOM, host-local only
+    volumes:
+      - ./orthanc/orthanc.json:/etc/orthanc/orthanc.json:ro
+      - ./orthanc-db:/var/lib/orthanc/db
+    environment:
+      ORTHANC__REGISTERED_USERS: ${ORTHANC_REGISTERED_USERS:?Set ORTHANC_REGISTERED_USERS in .env; see .env.example}
+      DICOM_WEB_PLUGIN_ENABLED: "true"
+      OHIF_PLUGIN_ENABLED: "true"
+    healthcheck:
+      test: ["CMD", "Orthanc", "--version"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
