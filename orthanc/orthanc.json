@@ -1,0 +1,14 @@
+{
+  "Name": "PACS DICOM Lab",
+  "DicomAet": "PACS_LAB",
+  "DicomPort": 4242,
+  "RemoteAccessAllowed": false,
+  "AuthenticationEnabled": true,
+  "DicomWeb": {
+    "Enable": true,
+    "Root": "/dicom-web/"
+  },
+  "OHIF": {
+    "DataSource": "dicom-web"
+  }
+}
